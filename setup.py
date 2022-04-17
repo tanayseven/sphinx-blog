@@ -5,7 +5,4 @@ setup(
     install_requires=[
         "sphinx >= 4.5.0",
     ],
-    extras_require=[
-        "pytest",
-    ],
 )
