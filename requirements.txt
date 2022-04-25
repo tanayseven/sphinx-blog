@@ -5,3 +5,4 @@ twine
 pytest
 flake8
 black
+sphinx
