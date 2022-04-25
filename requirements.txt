@@ -3,3 +3,4 @@ wheel
 bumpversion
 twine
 pytest
+flake8
