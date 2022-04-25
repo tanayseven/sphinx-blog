@@ -123,9 +123,7 @@ def process_post_nodes(app: Sphinx, doctree: nodes.document, fromdocname: str):
     env = app.builder.env
 
     if hasattr(env, "all_posts"):
-        env.all_posts = sorted(
-            env.all_posts, key=lambda post: post["date"], reverse=True
-        )
+        env.all_posts = sorted(env.all_posts, key=lambda post: post["date"], reverse=True)
 
     for node in doctree.traverse(AllPostsNode):
         if not hasattr(env, "all_posts"):
@@ -144,9 +142,7 @@ def process_post_nodes(app: Sphinx, doctree: nodes.document, fromdocname: str):
             title = nodes.title()
             reference = nodes.reference("", "")
             reference["refdocname"] = post_meta["docname"]
-            reference["refuri"] = app.builder.get_relative_uri(
-                fromdocname, post_meta["docname"]
-            )
+            reference["refuri"] = app.builder.get_relative_uri(fromdocname, post_meta["docname"])
             reference["refuri"] += "#" + post_meta["target"]["refid"]
             reference.append(nodes.Text(f"{post_meta['title']}"))
             title += reference
