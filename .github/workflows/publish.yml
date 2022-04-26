@@ -3,7 +3,9 @@ name: Publish
 on:
   workflow_run:
     workflows: [ "CI" ]
-    branches: [ main ]
+    branches: [ "main" ]
+    tags:
+      - v*
     types:
       - completed
 
